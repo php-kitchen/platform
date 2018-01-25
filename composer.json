@@ -1,0 +1,49 @@
+{
+    "name": "php-kitchen/platform",
+    "description": "A set of base classes to extend PHP Standard Library.",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/php-kitchen/platform",
+    "keywords": [
+        "stdlib",
+        "spl",
+        "array",
+        "string",
+        "map",
+        "collection",
+        "exception",
+        "clean code",
+        "properties"
+    ],
+    "support": {
+        "issues": "https://github.com/php-kitchen/platform/issues?state=open",
+        "forum": "https://discord.gg/Ez5VZhC",
+        "docs": "https://github.com/php-kitchen/platform/tree/master/docs",
+        "source": "https://github.com/php-kitchen/platform"
+    },
+    "authors": [
+        {
+            "name": "Dmitry Kolodko",
+            "email": "prowwid@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5",
+        "satooshi/php-coveralls": "^1.0",
+        "php-kitchen/code-specs": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPKitchen\\Platform\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPKitchen\\Platform\\Specs\\": "specs"
+        }
+    }
+}
