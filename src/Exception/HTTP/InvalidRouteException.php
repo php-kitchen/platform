@@ -1,11 +1,11 @@
 <?php
 
-namespace PHPKitchen\SPL\Exception\HTTP;
+namespace PHPKitchen\Platform\Exception\HTTP;
 
 /**
  * Represents exception caused by an invalid route.
  *
- * @package PHPKitchen\SPL\Exception\HTTP
+ * @package PHPKitchen\Platform\Exception\HTTP
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
 class InvalidRouteException {

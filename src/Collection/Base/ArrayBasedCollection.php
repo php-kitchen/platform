@@ -4,6 +4,7 @@ namespace PHPKitchen\Platform\Collection\Base;
 
 use PHPKitchen\Platform\Collection\Mixin;
 use PHPKitchen\Platform\Contract;
+use PHPKitchen\Platform\Mixin\Properties;
 
 /**
  * Represents a base class for collections based on arrays.
@@ -14,6 +15,7 @@ abstract class ArrayBasedCollection {
     use Mixin\CountableMethods;
     use Mixin\IteratorMethods;
     use Mixin\JsonSerializableMethods;
+    use Properties;
     protected $data;
 
     public function __construct($data = []) {

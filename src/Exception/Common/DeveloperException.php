@@ -1,11 +1,11 @@
 <?php
 
-namespace PHPKitchen\SPL\Exception\Common;
+namespace PHPKitchen\Platform\Exception\Common;
 
 /**
  * Represents exception thrown because of action of a developer.
  *
- * @package PHPKitchen\SPL\Exception\Environment
+ * @package PHPKitchen\Platform\Exception\Environment
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
 class DeveloperException extends \Exception {

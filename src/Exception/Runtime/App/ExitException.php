@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPKitchen\SPL\Exception\Runtime\App;
+namespace PHPKitchen\Platform\Exception\Runtime\App;
 
 use Throwable;
 
@@ -10,7 +10,7 @@ use Throwable;
  * Such exception should be caught only by low-level classes that would handle {@link statusCode} and
  * terminate the application.
  *
- * @package PHPKitchen\SPL\Exception\Runtime\App
+ * @package PHPKitchen\Platform\Exception\Runtime\App
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
 class ExitException extends \Exception {

@@ -1,13 +1,13 @@
 <?php
 
-namespace PHPKitchen\SPL\Exception\CLI;
+namespace PHPKitchen\Platform\Exception\CLI;
 
-use PHPKitchen\SPL\Exception\Common\UserException;
+use PHPKitchen\Platform\Exception\Common\UserException;
 
 /**
  * Represents
  *
- * @package PHPKitchen\SPL\Exception\CLI
+ * @package PHPKitchen\Platform\Exception\CLI
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
 class UnknownCommandException extends UserException {

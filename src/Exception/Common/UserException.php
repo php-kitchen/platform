@@ -1,11 +1,11 @@
 <?php
 
-namespace PHPKitchen\SPL\Exception\Common;
+namespace PHPKitchen\Platform\Exception\Common;
 
 /**
  * Represents
  *
- * @package PHPKitchen\SPL\Exception\Common
+ * @package PHPKitchen\Platform\Exception\Common
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
 class UserException extends \Exception {

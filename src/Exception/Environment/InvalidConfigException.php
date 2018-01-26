@@ -1,14 +1,14 @@
 <?php
 
-namespace PHPKitchen\SPL\Exception\Environment;
+namespace PHPKitchen\Platform\Exception\Environment;
 
-use PHPKitchen\SPL\Exception\Common\DeveloperException;
+use PHPKitchen\Platform\Exception\Common\DeveloperException;
 
 /**
  * Represents exception thrown if application or class configuration is
  * invalid.
  *
- * @package PHPKitchen\SPL\Exception\Environment
+ * @package PHPKitchen\Platform\Exception\Environment
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
 class InvalidConfigException extends DeveloperException {

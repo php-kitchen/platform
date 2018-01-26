@@ -10,7 +10,7 @@ use PHPKitchen\Platform\Specs\Base\Spec;
  *
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
-class MapTest extends Spec {
+class MapSpec extends Spec {
     /**
      * @test
      */
