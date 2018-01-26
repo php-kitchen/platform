@@ -9,6 +9,6 @@ use PHPKitchen\CodeSpecs\Base\Specification;
  *
  * @author Dmitry Kolodko <prowwid@gmail.com>
  */
-class Spec extends Specification {
+abstract class Spec extends Specification {
     protected const FIXTURES_DIR = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Fixtures' . DIRECTORY_SEPARATOR;
 }
