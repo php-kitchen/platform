@@ -14,6 +14,7 @@
 
 **Platform** is a collection of classes that aimed to extend PHP Standard Library with things, typical to 
 a decent OOP languages like:
+- Properties
 - String objects
 - Lists
 - Maps
