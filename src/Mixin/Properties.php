@@ -9,6 +9,7 @@ use PHPKitchen\Platform\Exception\Runtime\Property\UndefinedPropertyException;
  * Represents implementation of properties for PHP classes.
  *
  * @author Dmitry Kolodko <prowwid@gmail.com>
+ * @since 1.0
  */
 trait Properties {
     /**
@@ -18,10 +19,13 @@ trait Properties {
      * @param string $name the property name
      *
      * @return mixed the property value
+     *
      * @throws UndefinedPropertyException if the property is not defined
      * @throws InvalidAccessException if the property is write-only
+     *
      * @see getProperty()
      * @see __set()
+     * @since 1.0
      */
     public function __get($name) {
         return $this->getProperty($name);
@@ -33,9 +37,12 @@ trait Properties {
      * @param string $property the property name
      *
      * @return mixed the property value
+     *
      * @throws UndefinedPropertyException if the property is not defined
      * @throws InvalidAccessException if the property is write-only
+     *
      * @see setProperty()
+     * @since 1.0
      */
     protected function getProperty(string $property) {
 
@@ -59,8 +66,11 @@ trait Properties {
      *
      * @throws UndefinedPropertyException if the property is not defined
      * @throws InvalidAccessException if the property is read-only
+     *
      * @see setProperty()
      * @see __get()
+     *
+     * @since 1.0
      */
     public function __set($name, $value) {
         $this->setProperty($name, $value);
@@ -74,7 +84,9 @@ trait Properties {
      *
      * @throws UndefinedPropertyException if the property is not defined
      * @throws InvalidAccessException if the property is read-only
+     *
      * @see getProperty()
+     * @since 1.0
      */
     protected function setProperty(string $name, $value): void {
         $setter = 'set' . $name;
@@ -94,8 +106,11 @@ trait Properties {
      * @param string $name the property name
      *
      * @return bool whether the named property is set (not null).
+     *
      * @see isPropertySet
      * @see http://php.net/manual/en/function.isset.php
+     *
+     * @since 1.0
      */
     public function __isset($name) {
         return $this->isPropertySet($name);
@@ -109,6 +124,8 @@ trait Properties {
      * @param string $name the property name
      *
      * @return bool whether the named property is set (not null).
+     *
+     * @since 1.0
      */
     public function isPropertySet(string $name): bool {
         $getter = 'get' . $name;
@@ -126,8 +143,11 @@ trait Properties {
      * @param string $name the property name
      *
      * @throws InvalidAccessException if the property is read only.
+     *
      * @see unSetProperty
      * @see http://php.net/manual/en/function.unset.php
+     *
+     * @since 1.0
      */
     public function __unset($name) {
         $this->unSetProperty($name);
@@ -142,6 +162,8 @@ trait Properties {
      * @param string $name the property name
      *
      * @throws InvalidAccessException if the property is read only.
+     *
+     * @since 1.0
      */
     public function unSetProperty(string $name): void {
         $setter = 'set' . $name;
@@ -164,8 +186,11 @@ trait Properties {
      * @param string $name the property name
      *
      * @return bool whether the property is defined
+     *
      * @see canGetProperty()
      * @see canSetProperty()
+     *
+     * @since 1.0
      */
     public function hasProperty($name): bool {
         return $this->canGetProperty($name) || $this->canSetProperty($name);
@@ -183,6 +208,8 @@ trait Properties {
      * @param string $name the property name
      *
      * @return bool whether the condition property is defined
+     *
+     * @since 1.0
      */
     public function hasCondition($name): bool {
         return $this->hasMethod($name) && (strpos($name, 'is') === 0 || strpos($name, 'has') === 0);
@@ -201,6 +228,8 @@ trait Properties {
      *
      * @return bool whether the property can be read
      * @see canSetProperty()
+     *
+     * @since 1.0
      */
     public function canGetProperty(string $property): bool {
         return $this->hasGetterFor($property) || $this->hasField($property) || $this->hasCondition($property);
@@ -217,7 +246,10 @@ trait Properties {
      * @param string $property the property name
      *
      * @return bool whether the property can be written
+     *
      * @see canGetProperty()
+     *
+     * @since 1.0
      */
     public function canSetProperty(string $property): bool {
         return $this->hasSetterFor($property) || $this->hasField($property);
@@ -229,6 +261,8 @@ trait Properties {
      * @param string $name the field name
      *
      * @return bool whether the field is defined
+     *
+     * @since 1.0
      */
     public function hasField(string $name): bool {
         return property_exists($this, $name);
@@ -240,6 +274,8 @@ trait Properties {
      * @param string $property the property name
      *
      * @return bool whether the getter is defined
+     *
+     * @since 1.0
      */
     public function hasGetterFor(string $property): bool {
         return $this->hasMethod('get' . $property);
@@ -251,6 +287,8 @@ trait Properties {
      * @param string $property the property name
      *
      * @return bool whether the getter is defined
+     *
+     * @since 1.0
      */
     public function hasSetterFor(string $property): bool {
         return $this->hasMethod('set' . $property);
@@ -265,6 +303,8 @@ trait Properties {
      * @param string $name the method name
      *
      * @return bool whether the method is defined
+     *
+     * @since 1.0
      */
     public function hasMethod(string $name): bool {
         return method_exists($this, $name);

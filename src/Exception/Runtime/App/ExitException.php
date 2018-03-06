@@ -2,6 +2,7 @@
 
 namespace PHPKitchen\Platform\Exception\Runtime\App;
 
+use PHPKitchen\Platform\Exception\Mixin\StaticConstructors;
 use Throwable;
 
 /**
@@ -10,10 +11,11 @@ use Throwable;
  * Such exception should be caught only by low-level classes that would handle {@link statusCode} and
  * terminate the application.
  *
- * @package PHPKitchen\Platform\Exception\Runtime\App
  * @author Dmitry Kolodko <prowwid@gmail.com>
+ * @since 1.0
  */
 class ExitException extends \Exception {
+    use StaticConstructors;
     /**
      * @var int the exit status code
      */
@@ -32,7 +34,19 @@ class ExitException extends \Exception {
         parent::__construct($message, $code, $previous);
     }
 
+    public static function withStatusCode(int $code): self {
+        $exception = new static($code);
+
+        return $exception;
+    }
+
     public function getName() {
         return 'App Exit';
+    }
+
+    public function andStatusCode(int $code): self {
+        $this->statusCode = $code;
+
+        return $this;
     }
 }

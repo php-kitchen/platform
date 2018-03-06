@@ -1,23 +1,25 @@
 <?php
 
-namespace PHPKitchen\Platform\Collection {
+namespace PHPKitchen\Platform\Struct {
 
-    function Collection($data): Collection {
-        return Collection::from($data);
+    function Collection($elements): Collection {
+        return Collection::of($elements);
     }
 
-    function Map($data): Map {
-        return Map::from($data);
+    function Map($elements): Map {
+        return Map::of($elements);
     }
 }
 
 namespace PHPKitchen\Platform\Data {
 
-    function String($data): SimpleString {
-        return SimpleString::from($data);
+    use Stringy\Stringy;
+
+    function String(string $data, $encoding = null): Stringy {
+        return Stringy::create($data, $encoding);
     }
 
-    function Null(): NullObject {
+    function NullObject(): NullObject {
         return new NullObject();
     }
 }

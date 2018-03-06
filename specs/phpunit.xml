@@ -6,7 +6,8 @@
         convertWarningsToExceptions="true"
         stopOnFailure="false"
         strict="false"
-        verbose="true">
+        verbose="true"
+        testSuffixes="Spec.php">
     <filter>
         <whitelist>
             <directory suffix=".php">../src</directory>

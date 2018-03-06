@@ -5,8 +5,8 @@ namespace PHPKitchen\Platform\Helper\Collection;
 /**
  * Represents
  *
- * @package Helper\Collection
  * @author Dmitry Kolodko <prowwid@gmail.com>
+ * @since 1.0
  */
 class Diff {
     protected $collections;

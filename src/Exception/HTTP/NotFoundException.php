@@ -10,10 +10,14 @@ use PHPKitchen\Platform\Exception\Mixin\StaticConstructors;
  * @author Dmitry Kolodko <prowwid@gmail.com>
  * @since 1.0
  */
-class InvalidRouteException extends \Exception {
+class NotFoundException extends \Exception {
     use StaticConstructors;
 
+    public function __construct(string $message = "", int $code = 404, \Throwable $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+
     public function getName() {
-        return 'Invalid Route';
+        return 'Resource Not Found';
     }
 }
